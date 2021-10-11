@@ -1,0 +1,59 @@
+.form-main {
+  margin: auto;
+  max-width: 400px;
+  min-width: 220px;
+  width: 100%;
+  background: #d1d1d1;
+  border-radius: 8px;
+  padding: 12px;
+
+  &__card-number {
+    width: 100%;
+
+
+    &__title {
+      display: inline-block;
+      margin-bottom: 6px;
+      white-space: nowrap;
+
+      &::after {
+        content: '*';
+        color: red;
+      }
+    }
+
+    &__input {
+      display: inline-block;
+      width: 100%;
+      padding: 6px;
+      outline: none;
+      border: none;
+      border-radius: 6px;
+    }
+  }
+
+  &__expiration-ccv-code {
+    margin-top: 12px;
+    width: 100%;
+    display: flex;
+
+   &__expiration-date {
+      width: 50%;
+      margin-right: 8px;
+
+
+     &__input-expiry-date {
+       display: inline-block;
+       width: 100%;
+       padding: 6px;
+       outline: none;
+       border: none;
+       border-radius: 6px;
+     }
+   }
+
+    &__card-code {
+      width: 50%;
+    }
+  }
+}
