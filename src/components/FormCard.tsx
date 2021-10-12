@@ -18,7 +18,7 @@ const FormCard = () => {
   const handleChangeCardNumber  = (e: React.ChangeEvent<HTMLInputElement>) => {
     const reg = /^[0-9]+$/;
 
-    setInputCardNumber(e.target.value);
+    setInputCardNumber(e.target.value.replace(/\W/gi, '').replace(/(.{4})/g, '$1 '));
 
     if (e.target.value === '' || !reg.test(e.target.value)) {
       setErrorCardNumber('Данные не введены');
@@ -30,7 +30,7 @@ const FormCard = () => {
   const handleChangeExpiryDate = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const reg = /^[0-9]+$/;
 
-    setInputExpiryDate(e.target.value);
+    setInputExpiryDate(e.target.value.replace(/\W/gi, '').replace(/(.{2})/g, '$1/'))
 
     if (e.target.value === '' || !reg.test(e.target.value)) {
       setErrorExpiryDate('Данные не введены');
@@ -42,7 +42,7 @@ const FormCard = () => {
   const handleChangeCardInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const reg = /^[0-9]+$/;
 
-    setInputCardCode(e.target.value);
+    setInputCardCode(e.target.value)
 
     if (e.target.value === '' || !reg.test(e.target.value)) {
       setErrorCardCode('Данные не введены');
@@ -80,7 +80,7 @@ const FormCard = () => {
           onChange={ handleChangeCardNumber }
           className="form-main__card-number__input"
           placeholder="**** **** **** ****"
-          maxLength={ 16 }
+          maxLength={ 20 }
         />
       </div>
       <div className="form-main__expiration-ccv-code">
